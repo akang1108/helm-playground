@@ -37,6 +37,6 @@ helm repo index repo/                           # Create new index yaml referenc
 helm repo add my-github-helm-repo 'https://raw.githubusercontent.com/akang1108/helm-playground/master/repo/'
 helm repo update
 helm repo list
-helm search hello-world-job
+helm search repo hello-world-job
 ```
 

@@ -2,13 +2,13 @@ apiVersion: v1
 entries:
   hello-world-job:
   - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2021-03-24T16:05:00.988728-05:00"
+    appVersion: 0.1.0
+    created: "2021-03-24T16:17:44.648811-05:00"
     description: A Helm chart for Kubernetes
-    digest: 273b638f4d16d1bdb4088a727f392aa93c97e745501036d404882f013ef7521d
+    digest: 0263e5336648ea1700b6f0b23511306668cb8e13dc725ceb04525ffc78d4f10e
     name: hello-world-job
     type: application
     urls:
     - hello-world-job-0.1.0.tgz
     version: 0.1.0
-generated: "2021-03-24T16:05:00.988218-05:00"
+generated: "2021-03-24T16:17:44.648249-05:00"

@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ template "hello-world-job.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels: {{ include "hello-world-job.labels" . | nindent 4 }}
+spec:
+  backoffLimit: 4
+  template:
+    metadata:
+      labels: {{ include "hello-world-job.labels" . | nindent 8 }}
+    spec:
+      restartPolicy: Never
+      serviceAccountName: {{ .Values.serviceAccountName }}
+      containers:
+        - name: {{ template "hello-world-job.fullname" . }}
+          image: alpine
+          command: ["/bin/sh","-c"]
+          args:
+            - echo "hello world";
+              ls -la;
+              echo done;
+              sleep 2s;

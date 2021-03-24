@@ -32,5 +32,11 @@ helm package charts/hello-world-job -d repo/    # Add packaged hello-world-job c
 helm repo index repo/                           # Create new index yaml referencing charts
 
 # Then pushed up these changes to github
+
+# Now adding this public Helm repo locally
+helm repo add my-github-helm-repo 'https://raw.githubusercontent.com/akang1108/helm-playground/master/repo/'
+helm repo update
+helm repo list
+helm search hello-world-job
 ```
 

@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "hello-world-job.name" -}}
+{{- define "hello-world-cronjob.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "hello-world-job.fullname" -}}
+{{- define "hello-world-cronjob.fullname" -}}
 {{- $name := default .Chart.Name .Values.nameOverride }}
 {{- if contains $name .Release.Name }}
 {{- .Release.Name | trunc 63 | trimSuffix "-" }}
@@ -22,16 +22,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "hello-world-job.chart" -}}
+{{- define "hello-world-cronjob.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "hello-world-job.labels" -}}
-helm.sh/chart: {{ include "hello-world-job.chart" . }}
-{{ include "hello-world-job.selectorLabels" . }}
+{{- define "hello-world-cronjob.labels" -}}
+helm.sh/chart: {{ include "hello-world-cronjob.chart" . }}
+{{ include "hello-world-cronjob.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -41,8 +41,7 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "hello-world-job.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "hello-world-job.name" . }}
+{{- define "hello-world-cronjob.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "hello-world-cronjob.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
-}

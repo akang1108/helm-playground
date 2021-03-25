@@ -1,0 +1,27 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ template "hello-world-cronjob.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels: {{ include "hello-world-cronjob.labels" . | nindent 4 }}
+spec:
+  suspend: true
+  schedule: "0 0 30 2 0"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels: {{ include "hello-world-cronjob.labels" . | nindent 12 }}
+        spec:
+          restartPolicy: Never
+          serviceAccountName: {{ .Values.serviceAccountName }}
+          containers:
+            - name: {{ template "hello-world-cronjob.fullname" . }}
+              image: alpine
+              command: ["/bin/sh","-c"]
+              args:
+                - echo "hello world";
+                  ls -la;
+                  echo done;
+                  sleep 2s;

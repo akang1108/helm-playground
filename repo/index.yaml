@@ -2,8 +2,18 @@ apiVersion: v1
 entries:
   hello-world-cronjob:
   - apiVersion: v2
+    appVersion: 0.1.1
+    created: "2021-03-24T22:52:23.818749-05:00"
+    description: A Helm chart for Kubernetes
+    digest: d9ef00a37aa4f027146e9b01dd190c699282a42b8aa6dc7f138402f7a19ad782
+    name: hello-world-cronjob
+    type: application
+    urls:
+    - hello-world-cronjob-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: 0.1.0
-    created: "2021-03-24T22:49:23.046109-05:00"
+    created: "2021-03-24T22:52:23.818493-05:00"
     description: A Helm chart for Kubernetes
     digest: 49e1e3681600617ebb0e5598b9f91b7d39e4438eccdd14720328405835051ba3
     name: hello-world-cronjob
@@ -14,9 +24,9 @@ entries:
   hello-world-job:
   - apiVersion: v2
     appVersion: 0.1.1
-    created: "2021-03-24T22:49:23.049009-05:00"
+    created: "2021-03-24T22:52:23.819638-05:00"
     description: A Helm chart for Kubernetes
-    digest: 4ebe206ba4e0c9ce8b799fea9ae9df670ac9e3f76fef4df0dc5facae2303b8df
+    digest: ede3ccf7ed2f09d7a8581ecf41f14c0236dc9752de0b3f31c7692b9d885ad1bb
     name: hello-world-job
     type: application
     urls:
@@ -24,7 +34,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2021-03-24T22:49:23.048754-05:00"
+    created: "2021-03-24T22:52:23.819386-05:00"
     description: A Helm chart for Kubernetes
     digest: 0263e5336648ea1700b6f0b23511306668cb8e13dc725ceb04525ffc78d4f10e
     name: hello-world-job
@@ -32,4 +42,4 @@ entries:
     urls:
     - hello-world-job-0.1.0.tgz
     version: 0.1.0
-generated: "2021-03-24T22:49:23.045687-05:00"
+generated: "2021-03-24T22:52:23.818063-05:00"
